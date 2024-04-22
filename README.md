@@ -11,6 +11,7 @@ docker buildx build -t backup-gisquick-qgis-server-files .
 
 # Run Docker container
 docker run -it --rm \
+--privileged
 --env="AWS_ACCESS_KEY_ID=<CHANGE_IT>" \
 --env="AWS_SECRET_ACCESS_KEY=<CHANGE_IT>" \
 --env="NFS_SERVER_ADDRESS=<CHANGE_IT>" \
