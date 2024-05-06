@@ -12,7 +12,8 @@ aws_secret_access_key = $AWS_SECRET_ACCESS_KEY
 chmod 0600 "$AWS_CREDENTIALS_DIR"/credentials
 s3fs gisquick-backup:/qgis_server "$MNT_S3_BUCKET_DIR"
 mount -t nfs4 "$NFS_SERVER_ADDRESS":/ "$NFS_SERVER_MOUNT_DIR"
-cd "$MNT_S3_BUCKET_DIR"/qgis_server/
-tar -czf backup-qgis-server-publish-"$(date '+%Y-%m-%d')".tar.gz "$NFS_SERVER_MOUNT_DIR"/qgis-server-publish
-tar -czf backup-qgis-server-plugin-"$(date "+%Y-%m-%d")".tar.gz "$NFS_SERVER_MOUNT_DIR"/qgis-server-plugin
+cd "$MNT_S3_BUCKET_DIR"
+tar -czf "backup-qgis-server-publish-$(date '+%Y-%m-%d').tar.gz" "$NFS_SERVER_MOUNT_DIR"/qgis-server-publish
+tar -czf "backup-qgis-server-plugin-$(date "+%Y-%m-%d").tar.gz" "$NFS_SERVER_MOUNT_DIR"/qgis-server-plugins
 umount "$MNT_S3_BUCKET_DIR"
+umount "$NFS_SERVER_MOUNT_DIR"
