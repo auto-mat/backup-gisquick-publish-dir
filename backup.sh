@@ -15,5 +15,6 @@ mount -t nfs4 "$NFS_SERVER_ADDRESS":/ "$NFS_SERVER_MOUNT_DIR"
 cd "$MNT_S3_BUCKET_DIR"
 tar -czf "backup-qgis-server-publish-$(date '+%Y-%m-%d').tar.gz" "$NFS_SERVER_MOUNT_DIR"/qgis-server-publish
 tar -czf "backup-qgis-server-plugin-$(date "+%Y-%m-%d").tar.gz" "$NFS_SERVER_MOUNT_DIR"/qgis-server-plugins
+cd ~
 umount "$MNT_S3_BUCKET_DIR"
 umount "$NFS_SERVER_MOUNT_DIR"
