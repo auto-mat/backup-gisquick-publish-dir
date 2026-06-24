@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM debian:bookworm-20260623
 
 LABEL authors="Auto*Mat, z. s. auto-mat@auto-mat.cz"
 LABEL maintainer="Auto*Mat, z. s. auto-mat@auto-mat.cz"
